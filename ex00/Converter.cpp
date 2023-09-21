@@ -61,6 +61,9 @@ void Converter::printChar() {
 
 void Converter::printInt() {
 	std::cout << "int: ";
+	if (this->_input == "-inf" || this->_input == "+inf" || this->_input == "nan")
+		std::cout << "impossible" << std::endl;
+	else
 	if (this->_type == CHAR)
 		std::cout << static_cast<int>(this->_input[0]) << std::endl;
 	else if (this->_type == INT)
