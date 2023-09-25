@@ -12,7 +12,16 @@ struct Data
 	int n;
 };
 
-uintptr_t serialize(Data *ptr);
-Data *deserialize(uintptr_t raw);
+class Serial
+{
+	private:
+		Serial();
+		Serial(Serial const &other);
+		Serial &operator=(Serial const &other);
+		~Serial();
+	public:
+		static uintptr_t serialize(Data *ptr);
+		static Data *deserialize(uintptr_t raw);
+};
 
 #endif

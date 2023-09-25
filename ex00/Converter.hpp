@@ -14,19 +14,16 @@ enum e_type {
 class Converter
 {
 	private:
-		std::string _input;
-		int _type;
-	public:
-		Converter(std::string input);
+		Converter();
 		Converter(Converter const &other);
-		~Converter();
 		Converter &operator=(Converter const &other);
-	
-		void convert();
-		void printChar();
-		void printInt();
-		void printFloat();
-		void printDouble();
+		~Converter();
+	public:
+		static int convert(std::string s);
+		static void printChar(std::string s, int type);
+		static void printInt(std::string s, int type);
+		static void printFloat(std::string s, int type);
+		static void printDouble(std::string s, int type);
 	};
 
 #endif

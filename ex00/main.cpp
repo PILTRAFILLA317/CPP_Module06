@@ -7,12 +7,11 @@ int main(int ac, char **av){
 	}
 
 	try{
-		Converter converter(av[1]);
-		converter.convert();
-		converter.printChar();
-		converter.printInt();
-		converter.printFloat();
-		converter.printDouble();
+		std::string s(av[1]);
+		Converter::printChar(s, Converter::convert(s));
+		Converter::printInt(s, Converter::convert(s));
+		Converter::printFloat(s, Converter::convert(s));
+		Converter::printDouble(s, Converter::convert(s));
 	}
 	catch (std::exception &e){
 		std::cout << "Error: " << e.what() << std::endl;

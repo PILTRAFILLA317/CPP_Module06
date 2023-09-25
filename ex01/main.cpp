@@ -8,8 +8,8 @@ int main()
 	std::cout << "Data before serialization:" << std::endl;
 	std::cout << "str: " << d->str << std::endl;
 	std::cout << "n: " << d->n << std::endl;
-	uintptr_t p = serialize(d);
-	Data *d2 = deserialize(p);
+	uintptr_t p = Serial::serialize(d);
+	Data *d2 = Serial::deserialize(p);
 	std::cout << "Data after deserialization:" << std::endl;
 	std::cout << "str: " << d2->str << std::endl;
 	std::cout << "n: " << d2->n << std::endl;
